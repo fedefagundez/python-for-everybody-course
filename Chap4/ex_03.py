@@ -1,23 +1,24 @@
-try:
-    scoreInput = input("Enter Score: ")
-    # La siguiente línea devuelve un error si
-    # scoreInput no es un número
-    score = float(scoreInput)
-
-    if score < 0 or score > 1:
-        print("Bad Score")
-
+def computePay(hours, rate):
+    if hours <= 40:
+        pay = hours * rate
     else:
-        if score >= 0.9:
-            print("A")
-        elif score >= 0.8:
-            print("B")
-        elif score >= 0.7:
-            print("C")
-        elif score >= 0.6:
-            print("D")
-        else:
-            print("F")
+        pay = 40 * rate + (hours - 40) * (rate * 1.5)
+
+    return pay
+
+
+# Capture hours data and check
+try:
+    inputHours = input("Enter Hours: ")
+    hours = float(inputHours)
+    inputRate = input("Enter Rate: ")
+    rate = float(inputRate)
+
+    # Compute pay
+    pay = computePay(hours, rate)
+
+    # Printing results
+    print("Pay:", pay)
 
 except:
-    print("Bad Score")
+    print("Please, enter numeric input")
