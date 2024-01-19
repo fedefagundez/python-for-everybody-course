@@ -12,8 +12,7 @@ try:
         pay = 40 * rate + (hours - 40) * (rate * 1.5)
 
     # Printing results
-    print("Pay:",pay)
-    
-except:
-    print("Please, enter numerico input")
+    print("Pay:", pay)
 
+except:
+    print("Please, enter numeric input")
